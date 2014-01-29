@@ -18,7 +18,13 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[twoside]{article}
+\documentclass[twocolumn]{article}
+
+%% Load graphicx package
+\usepackage{graphicx}
+%\usepackage[font=small]{subfig}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 \usepackage{lipsum} % Package to generate dummy text throughout this template
 
@@ -28,7 +34,7 @@
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
 \usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
-\usepackage{multicol} % Used for the two-column layout of the document
+%\usepackage{multicol} % Used for the two-column layout of the document
 \usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
@@ -62,9 +68,9 @@
 
 \author{
 \large
-\textsc{John Smith}\thanks{A thank you or further information}\\[2mm] % Your name
-\normalsize University of California \\ % Your institution
-\normalsize \href{mailto:john@smith.com}{john@smith.com} % Your email address
+\textsc{Ozan Keysan, Markus A. Mueller}\thanks{Institute of Energy Systems, University of Edinburgh}\\[2mm] % Your name
+\normalsize Institute of Energy Systems, University of Edinburgh \\ % Your institution
+\normalsize \href{mailto:o.keysan@ed.ac.uk}{o.keysan@ed.ac.uk} % Your email address
 \vspace{-5mm}
 }
 \date{}
@@ -73,31 +79,67 @@
 
 \begin{document}
 
+\twocolumn[
+\begin{@twocolumnfalse}
+
 \maketitle % Insert title
 
-\thispagestyle{fancy} % All pages have headers and footers
+%\thispagestyle{fancy} % All pages have headers and footers
 
-%----------------------------------------------------------------------------------------
-%	ABSTRACT
-%----------------------------------------------------------------------------------------
 
 \begin{abstract}
 
-\noindent \lipsum[1] % Dummy abstract text
+dggfd dgdfhfdh ghdfhdf sdgert sghdf ddsg g rrgfd fd dfe r  % Dummy abstract text
 
 \end{abstract}
 
-%----------------------------------------------------------------------------------------
-%	ARTICLE CONTENTS
-%----------------------------------------------------------------------------------------
-
-\begin{multicols}{2} % Two-column layout throughout the main article text
+\end{@twocolumnfalse}
+]
+%\begin{multicols}{2} % Two-column layout throughout the main article text
 
 \section{Introduction}
 
-A combined wind and wave energy platform which has a 5.2 MW wind turbine and ten independent 500 kW oscillating water columns (OWCs) is analysed in this paper. Simulations at different wind-wave conditions using the real measured data are used to estimate the performance of different generator sizes. The annual energy harvest is estimated for each power rating, in order to get an understanding of the relation between the generator cost and the electricity generation income.
+Offshore energy converters can help to utilize energy resources that remained untapped so far. Offshore wind turbines benefit from regular wind regimes and higher wind speeds. The average offshore wind speed is around 8.6 m/s, almost double of the average onshore wind speed, which is 4.6 m/s \cite{Hau2013}. Offshore energy platforms can also use wave energy to maximise electricity generation and have smoother power output. 
+
+MARINA Platform is an EU FP7 project that aims to design combined floating wind and wave energy platforms \cite{marinaweb}. The project evaluated various combined wind and wave energy platforms in terms of manufacturability, cost of energy, reliability etc. 
+
+One of the concepts is a floating platform that consists of a 5 MW wind turbine and 20 oscillating water columns (OWC), each with a maximum rating of 500 kW \cite{Sullivan2013} (see Fig. \ref{owc_array}).  
+
+  \begin{figure}
+    \centering
+    \includegraphics[]{owc_array}
+    \caption{Floating OWC array with single wind turbine concept \cite{Sullivan2013}.} 
+    \label{owc_array}
+  \end{figure}
+
+The power take-off system in the OWC consists of a Well's turbine, a symmetrical turbine which rotates in the same direction regardless of the direction of flow. The Well's turbine is connected to a rotary generator. For simulations a squirrel cage induction generator, directly coupled to the Well's turbine, is used. The Well's turbines usually don't have any pitch control mechanism, thus the output power is directly related the the air speed in the OWC chamber.
 
 %------------------------------------------------
+
+\section{Generator Type}
+
+Induction generator is thought to be most suitable generator or OWCs. Squirrel cage induction machines (SCIG) have simple and robust structure, which makes them suitable for a wave energy converter of a floating OWC platform, where access to platform is limited by weather and sea conditions and a repair in the chamber room is not an easy task. 
+The most suitable SCIG type for floating offshore platforms are marine motors, which are widely used in ships. In particular, motors used on deck have very similar operating conditions with electrical generators of OWCs. They also operate in humid and saline environment with occasional water sprays and flooding. Also in a floating platform, there is continuous rolling motion and variable temperature range similar to ships. Marine induction machines can be manufactured  with cast iron frames to reduce corrosion, can be painted with special paints or can have higher level of insulation (IP56 or IP65). 
+
+\section{Generator Sizing}
+
+\section{Defining Generator Parameters}
+
+A Simulink model is developed to simulate the combined wind and wave energy platforms. Different power aggregation methods are possible and these will be presented in a different paper.
+
+In order to evaluate the performance of different power rated machines, an accurate analytical model of electrical machine is required. The electrical machines can be represented using the equivalent electric circuit presented in Fig. \ref{equivalent_circuit}. In the circuit $R_s, R_r$ are the stator and rotor resistance, $L_{ls}, L_{lr}$ are the stator and rotor leakage inductance, $L_m$ is the magnetising inductance.
+
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{equivalent_circuit}
+    \caption{Equivalent circuit of an induction machine.} 
+    \label{equivalent_circuit}
+  \end{figure}
+
+
+In order to model the OWC generator, the inertia ($J$) of the rotor is also required. The inertia of the machine has a direct effect in the acceleration and deceleration of the system. This is especially important in variable speed systems as in OWC. The inertia depends on the rotor dimensions, which depends on the rated power and number of poles. Inertia of various machines are collected from commercial machine catalogues \cite{Siemens2012}. and plotted in Figure  2 .6. The trend lines for these data are estimated and the equations are plotted in Table  2 .3.
+
 
 \section{Approach}
 - Data from two sites (the coast of Norway and Spain) are obtained to get a better representation of the wave and wind energy outputs. These data represent the 10 year measurements for the wind speed and wave height.
@@ -199,6 +241,13 @@ e = mc^2
 
 \lipsum[6] % Dummy text
 
+
+\section*{Acknowledgement} % (fold)
+\label{sec:acknowledgement}
+
+The authors gratefully acknowledge the financial support
+from the EU FP7 MARINA Platform project, grant agreement no. FP7-241402.
+% section acknowledgement (end)
 %------------------------------------------------
 
 \section{Discussion}
@@ -227,6 +276,6 @@ Figueredo, A.~J. and Wolf, P. S.~A. (2009).
 
 %----------------------------------------------------------------------------------------
 
-\end{multicols}
+%\end{multicols}
 
 \end{document}
