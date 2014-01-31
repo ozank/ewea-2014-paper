@@ -125,6 +125,44 @@ The most suitable SCIG type for floating offshore platforms are marine motors, w
 
 \section{Generator Sizing}
 
+In order to determine the optimum size of the generators, resource data measured by MARINA Platform Project work package 2 \& 4 are used. Two sites were chosen because of high wind and wave energy resource: site \#3 (off the coast of Portugal and Spain) and site \#14 (off the coast of Norway). The main specifications of the sites are presented in Table \ref{site_spec}.
+
+
+\begin{table}
+  \centering
+  \begin{tabular}{lll}
+   Parameter & Site \#3 \\
+  \hline
+Av. Wind Speed & 6.98 m/s \\
+Av. Wave Power & 42.7 kW/m \\
+Av. Wave Period & 11.84 s \\
+Significant wave & 10.2 m  \\
+(50-year) \\
+\hline
+  \end{tabular}
+  \caption{Specifications of the selected sites for the OWC array \cite{Gao2012}.}
+  \label{site_spec}
+\end{table}
+
+
+\begin{figure}[]
+  \centering
+  \subfloat[Significant wave height distribution.]{\label{generator_inertia}\includegraphics[width=0.45\textwidth]{spain_significant_wave}}
+
+  \subfloat[Mean swell period distribution.]{\label{time_constant}\includegraphics[width=0.45\textwidth]{spain_mean_swell}}
+    \caption{Probability distribution for the wave characteristics of site \#3 (2001-2010).} 
+    \label{spain_site}
+\end{figure}
+
+
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{generator_rating}
+    \caption{Floating OWC array with single wind turbine concept } 
+    \label{generator_rating}
+  \end{figure}
+
 \section{Defining Generator Parameters}
 
 A Simulink model is developed to simulate the combined wind and wave energy platforms. Different power aggregation methods are possible and these will be presented in a different paper.
