@@ -101,9 +101,9 @@ dggfd dgdfhfdh ghdfhdf sdgert sghdf ddsg g rrgfd fd dfe r  % Dummy abstract text
 
 \section{Introduction}
 
-Deep water renewable energy resources remained mostly untapped so far. Offshore wind regimes are more regular and wind speeds are higher. The average offshore wind speed is around 8.6 m/s, almost double of the average onshore wind speed, which is 4.6 m/s \cite{Hau2013}. On top of that, there is wave energy, which is around XXX kW/m in XXX (ref ver). Floating offshore energy platforms can also be used to utilise these energy resources.
+Deep water renewable energy resources remained mostly untapped so far. Offshore wind regimes are more regular and wind speeds are higher. The average offshore wind speed is around 8.6 m/s, almost double of the average onshore wind speed, which is 4.6 m/s \cite{Hau2013}. On top of that, there is wave energy, which is around 70 kW/m off the West coast of Scotland \cite{BERR2008}. Floating offshore energy platforms can also be used to utilise these energy resources.
 
-MARINA Platform is an EU FP7 project that aims to design different combined floating wind and wave energy platforms \cite{marinaweb}. The project evaluated various combined wind and wave energy platforms, which are presented in XXX,  in terms of manufacturability, cost of energy, reliability etc. !ref ver!  One of the challenges in offshore floating platforms is the high installation and operational costs due to challenging environment. The cost of the system can be minimised by optimising the power rating of the drive-train. 
+MARINA Platform is an EU FP7 project that aims to design different combined floating wind and wave energy platforms \cite{marinaweb}. The project evaluated various combined wind and wave energy platforms in terms of manufacturability, cost of energy, reliability etc. \cite{MarinaPlatform2012}. One of the challenges in offshore floating platforms is the high installation and operational costs due to challenging environment. The cost of the system can be minimised by optimising the power rating of the drive-train. 
 
 One of the concepts is a floating platform that consists of a 5 MW wind turbine and 20 oscillating water columns (OWC) as shown in Fig. \ref{owc_array}). Each OWC has a maximum rating of of 500 kW \cite{Sullivan2013}.
 
@@ -145,7 +145,7 @@ Significant wave & 10.2 m  \\
   \label{site_spec}
 \end{table}
 
-\begin{figure}[]
+\begin{figure}[t]
   \centering
   \subfloat[Significant wave height distribution.]{\label{generator_inertia}\includegraphics[width=0.45\textwidth]{spain_significant_wave}}
 
@@ -154,30 +154,31 @@ Significant wave & 10.2 m  \\
     \label{spain_site}
 \end{figure}
 
-Annual energy generation versus the generator power rating is presented in Fig. \ref{generator_rating} and in Table \ref{generator_rating_table}. The system generates XXX MWh/year with 500 kW generators. Reducing the generator rating to 250 kW reduces the energy harvest just by XXX \%. In other words the extra XXX MWh is XXX \% more expensive than the first XXX MWh. Although, the overall cost of the system is dominated by the cost of the platform and the installation cost. It is still reasonable to use a 300 kW generator to reduce the cost of the power take-off system.
+Annual energy generation versus the generator power rating is presented in Fig. \ref{generator_rating} and in Table \ref{generator_rating_table}. A 500 kW generator produces 670 MWh/year. Reducing the generator rating to 250 kW reduces the energy harvest just by 10 \%. In other words the extra 70 MWh is nine times more expensive than the first 600 MWh. Although, the overall cost of the system is dominated by the cost of the platform and the installation cost. It is still reasonable to use a smaller generator than the maximum power rating to reduce the cost of the power take-off system.
 
 Typical power outputs of the wind turbine and one of the OWCs are presented in XXX !Eklenebilir!
 
-  \begin{figure}
+  \begin{figure}[t]
     \centering
     \includegraphics[width=0.5\textwidth]{generator_rating}
-    \caption{Floating OWC array with single wind turbine concept } 
+    \caption{Annual energy generation from single OWC as a function of the generator rating.} 
     \label{generator_rating}
   \end{figure}
   
   \begin{table}
     \centering
-    \begin{tabular}{ll}
-     Generator Rating (kW) & Annual Energy (MWh) \\
+    \begin{tabular}{ccc}
+     Generator & Annual & Normalized \\
+     Rating & Energy & (\%) \\
     \hline
-  100 & 6.98 m/s \\
-  200 &  42.7 kW/m \\
-  300 & 11.84 s \\
-  400 & 10.2 m  \\
-  500 & 50-year) \\
+  200 kW & 574 MWh & 85.7 \% \\
+  250 kW & 603 MWh & 90.0 \% \\
+  300 kW & 624 MWh & 93.1 \% \\
+  400 kW & 652 MWh & 97.3 \% \\
+  500 kW & 670 MWh & 100 \%\\
   \hline
     \end{tabular}
-    \caption{Annual energy generation variation with the generator power rating}
+    \caption{Annual energy generation variation with generator power rating}
     \label{generator_rating_table}
   \end{table}
   
@@ -190,13 +191,11 @@ An accurate model of the generator is required for different power ratings. In t
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.45\textwidth]{scig_schematic}
-    \caption{Equivalent circuit of an induction machine.} 
+    \includegraphics[width=0.5\textwidth]{scig_schematic}
+    \caption{Equivalent circuit of an induction machine \cite{Matlab}.} 
     \label{equivalent_circuit}
   \end{figure}
   
-  ! ref ver %http://www.mathworks.co.uk/help/physmod/sps/powersys/ref/asynchronousmachine.html
-
 \subsection{Rotor Inertia}
 
 The rotor inertia($J$) has a direct effect in the acceleration and deceleration of the system. This is especially important in variable speed systems as in OWC. The inertia depends on the rotor dimensions, which depends on the rated power and number of poles. Inertia of several machines are collected from commercial machine catalogues \cite{Siemens2012} XXX diger katalog da eklenebilirXXX and plotted in Fig. \ref{generator_inertia}. The trend lines for these data are calculated and the equations are presented in Table \ref{inertia_estimation}.
@@ -323,16 +322,9 @@ from the EU FP7 MARINA Platform project, grant agreement no. FP7-241402.
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
+\bibliography{ewea-2014}
 
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
-
-\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-Figueredo, A.~J. and Wolf, P. S.~A. (2009).
-\newblock Assortative pairing and life history strategy - a cross-cultural
-  study.
-\newblock {\em Human Nature}, 20:317--330.
- 
-\end{thebibliography}
+\bibliographystyle{ieeetr}
 
 %----------------------------------------------------------------------------------------
 
