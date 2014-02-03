@@ -35,14 +35,13 @@
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
-\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=16pt]{geometry} % Document margins
 %\usepackage{multicol} % Used for the two-column layout of the document
 \usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
 \usepackage{booktabs} % Horizontal rules in tables
-\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+
 \usepackage{hyperref} % For hyperlinks in the PDF
 
-\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
 
 \usepackage{abstract} % Allows abstract customization
@@ -91,8 +90,8 @@
 
 \begin{abstract}
 
-dggfd dgdfhfdh ghdfhdf sdgert sghdf ddsg g rrgfd fd dfe r  % Dummy abstract text
-
+Floating wind and wave energy platforms can help to exploit far offshore renewable energy resources.
+However, the cost of these devices are higher than the onshore equivalents. The cost of the power take-off system can be reduced by reducing the generator power rating, which will increase the capacity factor. Annual energy income is estimated with different sized generators using  an oscillating water column model. The parameters used in mechanical and electrical models are presented in the paper as a function of generator's power rating.
 \end{abstract}
 
 \end{@twocolumnfalse}
@@ -101,11 +100,11 @@ dggfd dgdfhfdh ghdfhdf sdgert sghdf ddsg g rrgfd fd dfe r  % Dummy abstract text
 
 \section{Introduction}
 
-Deep water renewable energy resources remained mostly untapped so far. Offshore wind regimes are more regular and wind speeds are higher. The average offshore wind speed is around 8.6 m/s, almost double of the average onshore wind speed, which is 4.6 m/s \cite{Hau2013}. On top of that, there is wave energy, which is around 70 kW/m off the West coast of Scotland \cite{BERR2008}. Floating offshore energy platforms can also be used to utilise these energy resources.
+Deep water renewable energy resources remained mostly untapped so far due to difficulties in installation. However, offshore wind regimes are more regular and wind speeds are higher. The average offshore wind speed is around 8.6 m/s, almost double of the average onshore wind speed, which is around 4.6~m/s~\cite{Hau2013}. On top of that, there is also large resource of wave energy, which is around 70 kW/m off the West coast of Scotland \cite{BERR2008}. Floating combined wind-wave energy platforms offshore energy platforms can be used to exploit these energy resources.
 
-MARINA Platform is an EU FP7 project that aims to design different combined floating wind and wave energy platforms \cite{marinaweb}. The project evaluated various combined wind and wave energy platforms in terms of manufacturability, cost of energy, reliability etc. \cite{MarinaPlatform2012}. One of the challenges in offshore floating platforms is the high installation and operational costs due to challenging environment. The cost of the system can be minimised by optimising the power rating of the drive-train. 
+MARINA Platform is an EU FP7 project that aims to design different combined floating wind and wave energy platforms \cite{marinaweb}. The project evaluated various combined wind and wave energy platforms in terms of manufacturability, cost of energy, reliability etc. \cite{Barrios2012}. Main challenges in offshore floating platforms is the high installation and maintenance costs. The cost of the system can be minimised by reducing the size of the power take-off system.
 
-One of the concepts is a floating platform that consists of a 5 MW wind turbine and 20 oscillating water columns (OWC) as shown in Fig. \ref{owc_array}). Each OWC has a maximum rating of of 500 kW \cite{Sullivan2013}.
+One of the concepts is a floating platform that consists of a 5~MW wind turbine and 20 oscillating water columns (OWC) as shown in Fig.~\ref{owc_array}). Each OWC has a maximum rating of 500~kW \cite{Sullivan2013}.
 
   \begin{figure}
     \centering
@@ -114,26 +113,25 @@ One of the concepts is a floating platform that consists of a 5 MW wind turbine 
     \label{owc_array}
   \end{figure}
 
-The power take-off system of the wind turbine consists of a doubly-fed induction generator (DFIG) coupled to a multi-stage gearbox. In the OWC, prime mover is a Well's turbine, a symmetrical turbine which rotates in the same direction regardless of the direction of air flow. The Well's turbine is directly coupled to a rotary generator. The Well's turbines usually don't have any pitch control mechanism, thus the output power is directly related the the air speed in the OWC chamber.
+The power take-off system of the wind turbine consists of a doubly-fed induction generator (DFIG) coupled to a multi-stage gearbox \cite{Jonkman2009}. In the OWC, prime mover is a Well's turbine, a symmetrical turbine which rotates in the same direction regardless of the direction of air flow. In contrast to wind turbines, Well's turbines usually don't have any pitch control mechanism, thus the output power is directly related to the air speed in the OWC chamber. In the OWC concept the Well's turbine is directly coupled to a rotary generator. The generator speed should be adjusted to keep angle of attack in the blades within a small range to maximise the energy extract.
 
 %------------------------------------------------
 
 \section{Generator Type}
 
-Squirrel cage induction generators (SCIG) have simple and robust structure, which makes them suitable for a wave energy converter of a floating OWC platform, where access to platform is limited by weather and sea conditions and a repair in the chamber of a floating platform is challenging. 
-The most suitable SCIG type for floating offshore platforms are marine motors, which are widely used in ships. In particular, motors used on deck have very similar operating conditions with the electrical generators of OWCs. They both operate in humid and saline environment with occasional water sprays and flooding. Also in a floating platform, there is continuous rolling motion and variable temperature range similar to ships. Marine induction machines can be manufactured  with cast iron frames to reduce corrosion, can be painted with special paints or can have higher level of insulation (IP56 or IP65). 
+Squirrel cage induction generators (SCIG) have simple and robust structure, which makes them suitable for a wave energy converter of a floating OWC platform, where access is limited by weather and sea conditions and any repairs in the OWC chamber are challenging. 
+The most suitable SCIG type for floating offshore platforms are special-made marine motors, which are widely used in ships. In particular, motors used on deck have very similar operating conditions with the electrical generators of OWCs. They both operate in humid and saline environment with occasional water sprays and flooding. Also in a floating platform, there is continuous rolling motion and wide range of ambient temperature. Marine induction machines can be manufactured  with cast iron frames to reduce corrosion, can be painted with special paints or can have higher level of insulations (IP56 or IP65). 
 
 \section{Generator Sizing}
 
-The cost of the power take-off system is directly proportional to the power rating of the generator. Furthermore, the cost of power electronics, circuit breakers etc. are also related to the generator size. The usual practice is to choose a generator rating according to the maximum power rating of the OWC. However, in this case the capacity factor of the generator will be low throughout the year. It will be utilised completely just for a short amount time. However, choosing a smaller generator can reduce the annual energy generation as the power output is limited by the rating of the generator.
+The cost of the power take-off system is directly proportional to the power rating of the generator. Furthermore, the cost of power electronics, circuit breakers etc. are also related to the generator size. The usual practice is to choose the generator rating according to the maximum power rating of the OWC. However, in this case the capacity factor of the generator will be low throughout the year. It will be fully utilised just for a short amount time when there are high seas. However, choosing a smaller generator can reduce the annual energy generation as the power output is now limited by the rating of the generator.
 
-Annual energy output using different generator ratings are estimated using resource data. The resource data between 2001 and 2010 are provided by the work package 2 \& 4 partners of the MARINA Platform Project \cite{Gao2012}. Among many available sites, site site \#3, which is off the coast of Portugal and Spain, is chosen because of high wind and wave energy resource. The main specifications of the site are presented in Table \ref{site_spec}. The significant wave height distribution and mean swell period distribution of the site are presented in Fig. \ref{spain_site}.
+In order to estimate the optimum power rating, resource data supplied by the partners of the MARINA Platform project is used \cite{Gao2012}. Among many possible places, site site \#3, which is off the coast of Portugal and Spain, is chosen because of having both high wind and high wave energy resource. The main specifications of the site are presented in Table~\ref{site_spec}. The significant wave height distribution and mean swell period distribution of the site are presented in Fig.~\ref{spain_site}. Typical energy input is presented in Fig.~\ref{power_input}.
 
 \begin{table}
   \centering
-  \begin{tabular}{ll}
-   Parameter & Site \#3 \\
-  \hline
+  \begin{tabular}{cc}
+    \hline
 Av. Wind Speed & 6.98 m/s \\
 Av. Wave Power & 42.7 kW/m \\
 Av. Wave Period & 11.84 s \\
@@ -141,31 +139,37 @@ Significant wave & 10.2 m  \\
 (50-year) \\
 \hline
   \end{tabular}
-  \caption{Specifications of the selected sites for the OWC array \cite{Gao2012}.}
+  \caption{Specifications of the selected site (Site~\#3: off the coast of Spain and Portugal)\cite{Gao2012}.}
   \label{site_spec}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[]
   \centering
   \subfloat[Significant wave height distribution.]{\label{generator_inertia}\includegraphics[width=0.45\textwidth]{spain_significant_wave}}
 
   \subfloat[Mean swell period distribution.]{\label{time_constant}\includegraphics[width=0.45\textwidth]{spain_mean_swell}}
-    \caption{Probability distribution for the wave characteristics of site \#3 (2001-2010).} 
+    \caption{Probability distribution for the wave characteristics of site \#3 (between 2001 and 2010).} 
     \label{spain_site}
 \end{figure}
 
-Annual energy generation versus the generator power rating is presented in Fig. \ref{generator_rating} and in Table \ref{generator_rating_table}. A 500 kW generator produces 670 MWh/year. Reducing the generator rating to 250 kW reduces the energy harvest just by 10 \%. In other words the extra 70 MWh is nine times more expensive than the first 600 MWh. Although, the overall cost of the system is dominated by the cost of the platform and the installation cost. It is still reasonable to use a smaller generator than the maximum power rating to reduce the cost of the power take-off system.
 
-Typical power outputs of the wind turbine and one of the OWCs are presented in XXX !Eklenebilir!
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=0.5\textwidth]{power_input}
+    \caption{Typical power output from the wind turbine and wave energy converter.} 
+    \label{power_input}
+  \end{figure}
 
-  \begin{figure}[t]
+Annual energy generation versus the generator power rating is calculated using the time-series data between 2001 and 2010 and the results are presented in Fig.~\ref{generator_rating} and in Table~\ref{generator_rating_table}. A 500~kW generator produces 670~MWh/year. Reducing the generator rating to 250~kW reduces the energy harvest just by 10~\%. In other words for the extra 70~MWh, the generator capacity has to be doubled, which makes the extra 70~MWh nine times more expensive than the first 600~MWh. Although, the overall cost of the system is dominated by the cost of the platform and the installation cost. It is still reasonable to use a smaller generator than the maximum power rating to reduce the cost of the power take-off system.
+
+  \begin{figure}[]
     \centering
     \includegraphics[width=0.5\textwidth]{generator_rating}
     \caption{Annual energy generation from single OWC as a function of the generator rating.} 
     \label{generator_rating}
   \end{figure}
   
-  \begin{table}
+  \begin{table}[]
     \centering
     \begin{tabular}{ccc}
      Generator & Annual & Normalized \\
@@ -182,11 +186,12 @@ Typical power outputs of the wind turbine and one of the OWCs are presented in X
     \label{generator_rating_table}
   \end{table}
   
+\clearpage  
 \section{Generator Parameter Estimation}
 
-It is important to evaluate the performance of the combined wind-wave energy systems for different ratings of the generator. A combined Simulink model is therefore developed in the MARINA Platform project. Different power aggregation methods are can be applied, which will be presented in a different paper.
+In order to evaluate the performance of the combined wind-wave energy systems for different ratings of the generator, a combined Simulink model is developed in the MARINA Platform project. Different power aggregation methods can be applied, which will be presented in a different paper.
 
-An accurate model of the generator is required for different power ratings. In the Simulink, the electrical generator is modelled using a mechanical and electrical system. Mechanical system defined by inertia, friction constant and the input-output torques. The electrical system is represented using the equivalent electric circuit presented in Fig. \ref{equivalent_circuit}. In the circuit $R_s, R_r$ are the stator and rotor resistance, $L_{ls}, L_{lr}$ are the stator and rotor leakage inductance, $L_m$ is the magnetising inductance.
+An accurate generator model for each power rating is required. In Simulink, electrical generators are modelled using a mechanical and an electrical system. Mechanical system is defined by rotor inertia and friction constant. The electrical system is represented using the equivalent electric circuit presented in Fig. \ref{equivalent_circuit}. In the circuit $R_s, R_r$ are the stator and rotor resistance, $L_{ls}, L_{lr}$ are the stator and rotor leakage inductance, $L_m$ is the magnetising inductance.
 
 
   \begin{figure}
@@ -196,11 +201,11 @@ An accurate model of the generator is required for different power ratings. In t
     \label{equivalent_circuit}
   \end{figure}
   
-\subsection{Rotor Inertia}
+\subsection*{Rotor Inertia}
 
-The rotor inertia($J$) has a direct effect in the acceleration and deceleration of the system. This is especially important in variable speed systems as in OWC. The inertia depends on the rotor dimensions, which depends on the rated power and number of poles. Inertia of several machines are collected from commercial machine catalogues \cite{Siemens2012} XXX diger katalog da eklenebilirXXX and plotted in Fig. \ref{generator_inertia}. The trend lines for these data are calculated and the equations are presented in Table \ref{inertia_estimation}.
+The rotor inertia($J$), which has a direct effect in the transient response of the machine, is especially important in variable speed systems as in OWC. The inertia depends on the rotor dimensions, which depends on the rated power and number of poles. Inertia of several machines are collected from commercial machine catalogues \cite{Siemens2012} XXX diger katalog da eklenebilirXXX and plotted in Fig.~\ref{generator_inertia}. The trend lines for these data are calculated and the equations are presented in Table~\ref{inertia_estimation}.
 
-It is possible to convert the rotor inertia ($kgm^2$) to mechanical time constant (seconds), which is commonly used in per unit system.  The time constant is the ratio of rotational kinetic energy stored in the rotor to the power rating. Inertia values presented in Fig. \ref{generator_inertia} are converted to time constant using (\ref{eq:time_constant}) and the results are presented in Fig. \ref{time_constant}. The equation of the trend line is given in (\ref{eq:time_constant_trend}).
+It is possible to convert the rotor inertia ($kgm^2$) to mechanical time constant (seconds), which is commonly used in the per unit system.  Time constant is the ratio of rotational kinetic energy stored in the rotor to the power rating of the machine. Inertia values presented in Fig.~\ref{generator_inertia} are converted to time constant using eq. (\ref{eq:time_constant}) and the results are presented in Fig.~\ref{time_constant}. The equation of the trend line is given in eq. (\ref{eq:time_constant_trend}).
 
 
 \begin{figure}[]
@@ -241,14 +246,14 @@ It is possible to convert the rotor inertia ($kgm^2$) to mechanical time constan
 \end{table*}
 
 
-\subsection{Electrical Parameters} % (fold)
+\subsection*{Electrical Parameters} % (fold)
 \label{sub:electrical_parameters}
 
 Similar approximations are performed for the electrical parameters of the induction generator.
 
 Refleri kontrol et \cite{Thiringer2001} 
 
-It is easier to represent these parameters in per unit system. The stator resistance variation (in per unit) as a function of the rated power is presented in Fig. \ref{Rs}. It can be seen from the Fig. \ref{Rs_log_plot} that the stator resistance changes linearly in the logarithmic scale. The stator resistance can be estimated as:
+It is easier to represent these parameters in per unit system. The stator resistance variation (in per unit) as a function of the rated power is presented in Fig.~\ref{Rs}. It can be seen from the Fig.~\ref{Rs_log_plot} that the stator resistance changes linearly in the logarithmic scale. The stator resistance can be estimated as:
 
 \begin{equation}
  	ln(R_s(pu))=-0.3772\;ln (P_{(kW)}) - 2.441
@@ -264,7 +269,7 @@ It is easier to represent these parameters in per unit system. The stator resist
     \label{Rs}
 \end{figure}
 
-Magnetising inductance ($L_m$) is proportional to the magnetic flux in the machine. The magnetising inductance as a function of the power rating is presented in Fig. \ref{Lm_plot}. Another factor is the leakage inductance, which has a direct effect to the rated power factor of the machine. The leakage inductance as a function of the rated power is presented in Fig. \ref{Lls_plot}. These inductances can be estimated as follows:
+Magnetising inductance ($L_m$) defines the flux linkage between stator and rotor. The magnetising inductance as a function of the power rating is presented in Fig. \ref{Lm_plot}. Another parameter is the leakage inductance, which is related to leakage flux in the machine and has a direct effect on the power factor. The leakage inductance as a function of the rated power is presented in Fig. \ref{Lls_plot}. Magnetising and leakage inductances can be estimated as follows:
 
 \begin{equation}
  	L_m (pu) = 0.158\;ln (P_{(kW)}) + 2.23
@@ -304,12 +309,6 @@ Time series data from the coast of Norway and Spain are used to estimate the ene
 
 Time series data from the coast of Norway and Spain are used to estimate the energy harvest for different generator ratings. The aim is to minimize the initial cost of the drive train without affecting the electricity generation income. The preliminary results show that the generator size can be reduced by 60\% with a 15\% decrease in the wave energy output. It is also planned to include a coupled thermal model in the full paper, which simulate the operating conditions in a offshore platform more realistically.
 
-
-\section{References from first} % (fold)
-\label{sec:references_from_first}
-[1] Barrios, I. Martinez, J. Murphy, K. Lynch, and C. Lopez Pavon. "Methodology for assessing multiple combined wind and ocean energy technologies as part of the EU FP7 MARINA Platform Project." ICOE 2012 Proceedings, Dublin, Ireland (2012).
-[2] Hodgins, Neil. "High speed electrical power takeoff for oscillating water columns." ,University of Edinburgh PhD Dissertation, (2010).
-% section references_from_first (end)
 
 \section*{Acknowledgement} % (fold)
 \label{sec:acknowledgement}
