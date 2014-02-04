@@ -120,13 +120,7 @@ The power take-off system of the wind turbine consists of a doubly-fed induction
 \section{Generator Type}
 
 Squirrel cage induction generators (SCIG) have simple and robust structure, which makes them suitable for a wave energy converter of a floating OWC platform, where access is limited by weather and sea conditions and any repairs in the OWC chamber are challenging. 
-The most suitable SCIG type for floating offshore platforms are special-made marine motors, which are widely used in ships. In particular, motors used on deck have very similar operating conditions with the electrical generators of OWCs. They both operate in humid and saline environment with occasional water sprays and flooding. Also in a floating platform, there is continuous rolling motion and wide range of ambient temperature. Marine induction machines can be manufactured  with cast iron frames to reduce corrosion, can be painted with special paints or can have higher level of insulations (IP56 or IP65). 
-
-\section{Generator Sizing}
-
-The cost of the power take-off system is directly proportional to the power rating of the generator. Furthermore, the cost of power electronics, circuit breakers etc. are also related to the generator size. The usual practice is to choose the generator rating according to the maximum power rating of the OWC. However, in this case the capacity factor of the generator will be low throughout the year. It will be fully utilised just for a short amount time when there are high seas. However, choosing a smaller generator can reduce the annual energy generation as the power output is now limited by the rating of the generator.
-
-In order to estimate the optimum power rating, resource data supplied by the partners of the MARINA Platform project is used \cite{Gao2012}. Among many possible places, site site \#3, which is off the coast of Portugal and Spain, is chosen because of having both high wind and high wave energy resource. The main specifications of the site are presented in Table~\ref{site_spec}. The significant wave height distribution and mean swell period distribution of the site are presented in Fig.~\ref{spain_site}. Typical energy input is presented in Fig.~\ref{power_input}.
+The most suitable SCIG type for floating offshore platforms are special-made marine motors, which are widely used in ships. In particular, motors used on deck have very similar operating conditions with the electrical generators of OWCs. They both operate in humid and saline environment with occasional water sprays and flooding. Also in a floating platform, there is continuous rolling motion and wide range of ambient temperature. Marine induction machines can be manufactured  with cast iron frames to reduce corrosion, can be painted with special paints or can have higher level of insulations (IP56 or IP65).
 
 \begin{table}
   \centering
@@ -143,14 +137,22 @@ Significant wave & 10.2 m  \\
   \label{site_spec}
 \end{table}
 
-\begin{figure}[]
+\begin{figure}[t]
   \centering
   \subfloat[Significant wave height distribution.]{\label{generator_inertia}\includegraphics[width=0.45\textwidth]{spain_significant_wave}}
 
   \subfloat[Mean swell period distribution.]{\label{time_constant}\includegraphics[width=0.45\textwidth]{spain_mean_swell}}
     \caption{Probability distribution for the wave characteristics of site \#3 (between 2001 and 2010).} 
     \label{spain_site}
-\end{figure}
+\end{figure} 
+
+\section{Generator Sizing}
+
+The cost of the power take-off system is directly proportional to the power rating of the generator. Furthermore, the cost of power electronics, circuit breakers etc. are also related to the generator size. The usual practice is to choose the generator rating according to the maximum power rating of the OWC. However, in this case the capacity factor of the generator will be low throughout the year. It will be fully utilised just for a short amount time when there are high seas. However, choosing a smaller generator can reduce the annual energy generation as the power output is now limited by the rating of the generator.
+
+In order to estimate the optimum power rating, resource data supplied by the partners of the MARINA Platform project is used \cite{Gao2012}. Among many possible places, site site \#3, which is off the coast of Portugal and Spain, is chosen because of having both high wind and high wave energy resource. The main specifications of the site are presented in Table~\ref{site_spec}. In Fig.~\ref{spain_site} the significant wave height distribution and mean swell period distribution of the site are given. Typical energy input is presented in Fig.~\ref{power_input}.
+
+
 
 
   \begin{figure}[]
@@ -160,7 +162,9 @@ Significant wave & 10.2 m  \\
     \label{power_input}
   \end{figure}
 
-Annual energy generation versus the generator power rating is calculated using the time-series data between 2001 and 2010 and the results are presented in Fig.~\ref{generator_rating} and in Table~\ref{generator_rating_table}. A 500~kW generator produces 670~MWh/year. Reducing the generator rating to 250~kW reduces the energy harvest just by 10~\%. In other words for the extra 70~MWh, the generator capacity has to be doubled, which makes the extra 70~MWh nine times more expensive than the first 600~MWh. Although, the overall cost of the system is dominated by the cost of the platform and the installation cost. It is still reasonable to use a smaller generator than the maximum power rating to reduce the cost of the power take-off system.
+Annual energy generation versus the generator power rating is calculated using the time-series data between 2001 and 2010 and the results are presented in Fig.~\ref{generator_rating} and in Table~\ref{generator_rating_table}. A 500~kW generator produces 670~MWh/year. Reducing the generator rating to 250~kW reduces the energy harvest just by 10~\%. In other words for the extra 70~MWh, the generator capacity has to be doubled, which makes the extra 70~MWh nine times more expensive than the first 600~MWh. It is also possible to get more power from generators due to improved thermal performance as shown in \cite{Hodgins2010a}. In this case, the size of the generator can be further reduced. 
+
+However, it should be noted that, the total cost of the system is dominated by the cost of structure and installation, and the cost of the generator is only a small fraction of it. On the other side, reducing the generator size also cuts down the cost of power electronics, circuit breakers, transformer etc.
 
   \begin{figure}[]
     \centering
@@ -169,7 +173,7 @@ Annual energy generation versus the generator power rating is calculated using t
     \label{generator_rating}
   \end{figure}
   
-  \begin{table}[]
+  \begin{table}[t]
     \centering
     \begin{tabular}{ccc}
      Generator & Annual & Normalized \\
@@ -186,7 +190,7 @@ Annual energy generation versus the generator power rating is calculated using t
     \label{generator_rating_table}
   \end{table}
   
-\clearpage  
+
 \section{Generator Parameter Estimation}
 
 In order to evaluate the performance of the combined wind-wave energy systems for different ratings of the generator, a combined Simulink model is developed in the MARINA Platform project. Different power aggregation methods can be applied, which will be presented in a different paper.
@@ -197,13 +201,13 @@ An accurate generator model for each power rating is required. In Simulink, elec
   \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{scig_schematic}
-    \caption{Equivalent circuit of an induction machine \cite{Matlab}.} 
+    \caption{Equivalent circuit of an induction machine \cite{matlab2014}.} 
     \label{equivalent_circuit}
   \end{figure}
   
 \subsection*{Rotor Inertia}
 
-The rotor inertia($J$), which has a direct effect in the transient response of the machine, is especially important in variable speed systems as in OWC. The inertia depends on the rotor dimensions, which depends on the rated power and number of poles. Inertia of several machines are collected from commercial machine catalogues \cite{Siemens2012} XXX diger katalog da eklenebilirXXX and plotted in Fig.~\ref{generator_inertia}. The trend lines for these data are calculated and the equations are presented in Table~\ref{inertia_estimation}.
+The rotor inertia($J$), which has a direct effect in the transient response of the machine, is especially important in variable speed systems as in OWC. The inertia depends on the rotor dimensions, which depends on the rated power and number of poles. Inertia of several machines are collected from commercial machine catalogues \cite{Siemens2012} and plotted in Fig.~\ref{generator_inertia}. The trend lines for these data are calculated and the equations are presented in Table~\ref{inertia_estimation}.
 
 It is possible to convert the rotor inertia ($kgm^2$) to mechanical time constant (seconds), which is commonly used in the per unit system.  Time constant is the ratio of rotational kinetic energy stored in the rotor to the power rating of the machine. Inertia values presented in Fig.~\ref{generator_inertia} are converted to time constant using eq. (\ref{eq:time_constant}) and the results are presented in Fig.~\ref{time_constant}. The equation of the trend line is given in eq. (\ref{eq:time_constant_trend}).
 
@@ -249,10 +253,7 @@ It is possible to convert the rotor inertia ($kgm^2$) to mechanical time constan
 \subsection*{Electrical Parameters} % (fold)
 \label{sub:electrical_parameters}
 
-Similar approximations are performed for the electrical parameters of the induction generator.
-
-Refleri kontrol et \cite{Thiringer2001} 
-
+Similar approximations are performed for the electrical parameters of the induction generator using the manufacturer's data and data presented in \cite{Thiringer2001}.
 It is easier to represent these parameters in per unit system. The stator resistance variation (in per unit) as a function of the rated power is presented in Fig.~\ref{Rs}. It can be seen from the Fig.~\ref{Rs_log_plot} that the stator resistance changes linearly in the logarithmic scale. The stator resistance can be estimated as:
 
 \begin{equation}
